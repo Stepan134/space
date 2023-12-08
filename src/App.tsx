@@ -1,18 +1,27 @@
 import React from 'react'
-import axios from 'axios'
+import MainLayout from './components/layout/MainLayout.tsx'
+import { Routes, Route } from "react-router-dom"
+import VpnPage from './pages/VpnPage/index.tsx'
+import StatisticsPage from './pages/StatisticsPage/index.tsx'
+import SoftwarePage from './pages/SoftwarePage/index.tsx'
+import MapPage from './pages/MapPage/index.tsx'
+import ClientsPage from './pages/ClientsPage/index.tsx'
 
-function App() {
+const App: React.FC = () => {
   return (
-    <React.Fragment>
-      <div className="App">
-        <header className="App-header">
-          <p style={{ fontSize: '28px' }}>
-            Добро пожаловать!
-          </p>
-        </header>
-      </div>
-    </React.Fragment>
-  );
+    <>
+      <Routes>
+        <Route path="/" element={<MainLayout/>}>
+          <Route path="" element={<VpnPage />} />
+          <Route path="/statistics" element={<StatisticsPage />} />
+          <Route path="/clients" element={<ClientsPage />} />
+          <Route path="/map" element={<MapPage />} />
+          <Route path="/sw" element={<SoftwarePage />} />
+          {/* <Route path="*" element={<NotFound />} /> */}
+        </Route>
+      </Routes>
+    </>
+  )
 }
 
-export default App;
+export default App

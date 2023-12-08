@@ -1,7 +1,7 @@
 import axios from 'axios'
-import endpoints from './endpoints.tsx'
-import { httpCodes,httpHeaders } from './constants.tsx'
-import { logout, getToken} from '../auth/index.tsx'
+import endpoints from './endpoints.ts'
+import { httpCodes,httpHeaders } from './constants.ts'
+import { logout, getToken} from '../auth/index.ts'
 
 class HttpClient {
   constructor () {
@@ -16,8 +16,6 @@ class HttpClient {
         const changeHeaders = { ...this.defaultHeaders }
 
         const token = getToken()
-        console.log('token', token);
-        
         if (token) {
           changeHeaders[httpHeaders.AUTHORIZATION] = `Bearer ${token}`
         }
@@ -34,7 +32,7 @@ class HttpClient {
       res => res,
       err => {
         if (err.response && err.response.status === httpCodes.UNAUTHORIZED) {
-          // logout()
+          logout()
         }
 
         return Promise.reject(err)
@@ -48,7 +46,6 @@ class HttpClient {
     Object.keys(args).forEach(key => {
       changeUrl = changeUrl.replace(`{${key}}`, args[key])
     })
-    console.log(changeUrl);
     return changeUrl
   }
   

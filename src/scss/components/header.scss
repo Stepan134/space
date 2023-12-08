@@ -1,0 +1,34 @@
+@import '/src/scss/colors';
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  background: $base-color-back;
+  padding: 4px 16px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+.logo-href {
+  display: inline-flex;
+  align-items: center;
+}
+.logo-href-span {
+  font-size: 24px;
+  font-weight: 500;
+  margin-left: 10px;
+}
+.button-container {
+  display: flex;
+  align-items: center;
+}
+.button {
+  margin-right: 10px;
+}
+.logout-container {
+  display: flex;
+  align-items: center;
+}
+.logout {
+  margin-left: 5px;
+}
