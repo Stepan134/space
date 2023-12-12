@@ -9,20 +9,12 @@ const MainLayout: React.FC = () => {
     <div>
       <Layout>
         <Header />
-          <Content style={contentStyle}>
+          <Content>
             <Outlet/>
           </Content>
       </Layout>
     </div>
   )
-}
-
-// style
-const contentStyle: React.CSSProperties = {
-  textAlign: 'center',
-  minHeight: '94vh',
-  lineHeight: '120px',
-  color: '#fff',
 }
 
 export default MainLayout;
