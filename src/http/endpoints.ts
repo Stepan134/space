@@ -8,7 +8,8 @@ type endpointsConfig = {
 }
 const endpoints: endpointsConfig = {
   login: { method: 'get', url: `${API_URL}/v1/get-self`},
-  getUsers: { method: 'get', url: `${API_URL}/v1/users?limit=50&expand=software_sets,excluded_software_sets,vpn_server,vpn_server_aliases` },
+  getUsers: { method: 'get', url: `${API_URL}/v1/users?limit=5&expand=software_sets,excluded_software_sets,vpn_server,vpn_server_aliases` },
+  getVpnList: { method: 'get', url: `${API_URL}/v1/software/vpn/servers` },
 }
 
 export default endpoints
